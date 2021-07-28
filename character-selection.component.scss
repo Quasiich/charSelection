@@ -1,0 +1,78 @@
+@import "styles";
+
+/*Alignment of the Cards*/
+.alignment{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+/* Character Selection Card */
+.card {
+  background-color: transparentize($primary, 0.75);
+  margin-left: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.0rem;
+  width: 15rem;
+}
+
+/* Selected Character Selection Card */
+.card-selected {
+  background-color: transparentize($third, 0.25);
+  color: $secondary;
+  margin-left: 2rem;
+  margin-bottom: 5rem;
+  border-radius: 0.5rem;
+  font-size: 1.0rem;
+  text-align: center;
+  width: 15rem;
+}
+
+/* card-title text formation */
+.card-title {
+  text-align: center;
+}
+
+/* Character Selection Card Header Section */
+.card-header {
+  background-color: $secondary;
+  color: $primary;
+}
+
+/* Custom HR Style */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $secondary;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* Custom HR Style if Selected */
+.hr-selected {
+  border-top: 1px solid $secondary;
+}
+
+/* Play / Create Charakter Round Button */
+.btn-primary {
+  background-color: transparentize($primary, 0.75) !important;
+  color: $secondary !important;
+}
+
+/* Custom Logo Size Play / Create Charakter Round Button */
+.bmd-btn-fab {
+  min-width: 5rem;
+  min-height: 5rem;
+}
+
+/* Mouse Hover Event for Button */
+.color-change {
+  background-color: transparentize($third, 0.2);
+  color: $secondary;
+}
+
+.unclickable {
+  width: 10rem;
+  height: 10rem;
+}

@@ -1,0 +1,52 @@
+<!--<div style="color: white!important; font-size: x-large;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">ResourceName: {{resourceName}}</div>-->
+<!-- CharacterSelection and Information Cards-->
+<div class="bottom-left mb-4 disable-select">
+  <!-- Character Card -->
+  <div class="alignment">
+    <div (click)="setCharSelected(char)" *ngFor="let char of characters">
+      <div [ngClass]="{'card-selected': char.Id == selectedChar, 'card': char.Id != selectedChar}" class="card-body">
+      <!-- Character Card Headline -->
+      <h5 class="card-title"> {{char.FirstName}} </h5>
+        <h5 class="card-title"> {{char.LastName}} </h5>
+      <hr [ngClass]="{'hr-selected': char.Id == selectedChar}">
+      <div class="container">
+        <div class="row">
+          <div class="col-3"><i class="fas fa-transgender"></i></div>
+          <div class="col">{{char.Gender}}</div>
+        </div>
+        <!-- Character Card BirthDay Row -->
+        <div class="row">
+          <div class="col-3"><i class="fas fa-birthday-cake"></i></div>
+          <div class="col">{{char.BirthdateDay}}.{{char.BirthdateMonth}}.{{char.BirthdateYear}}</div>
+        </div>
+        <!-- Character Card PlaceOfBirth Row -->
+        <div class="row">
+          <div class="col-3"><i class="fas fa-search-location"></i></div>
+          <div class="col">{{char.Birthplace}}</div>
+        </div>
+        <!-- Character Card Nationality Row -->
+        <div class="row">
+          <div class="col-3"><i class="fas fa-globe"></i></div>
+          <div class="col">{{char.Nationality}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Create Character and PlayWithChar Buttons // mouseHover event for changing Color -->
+<div class="unclickable bottom-right" (click)="this.clickWasInside=true">
+<div class="bottom-right mr-4 mb-4 disable-select" (mouseover)="changeColor=true" (mouseleave)="changeColor=false">
+  <!-- Create new Character Button -->
+  <button type="button" [ngClass]="{'color-change': changeColor == true, 'btn-primary': changeColor != true}" class="btn bmd-btn-fab" *ngIf="allowedToCreate && !selectedChar"
+          routerLink="/character-creation">
+    <i *ngIf="!selectedChar" class="fas fa-plus"></i>
+  </button>
+  <!-- Play with currently selected Character Button -->
+  <button type="button" [ngClass]="{'color-change': changeColor == true, 'btn-primary': changeColor != true}" class="btn bmd-btn-fab" *ngIf="selectedChar" (click)="playWithThisChar()">
+    <i *ngIf="selectedChar" class="fas fa-angle-double-right ml-1"></i>
+  </button>
+</div>
+</div>
